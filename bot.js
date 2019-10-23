@@ -1,6 +1,6 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-var lx = "PLEASE STAND BEHIND THE WHITE LINE WHILE THE BUS IS IN MOTION"
+var lx = "PLEASE STAND BEHIND THE WHITE LINE WHILE THE BUS IS IN MOTION";
 
 var botID = process.env.BOT_ID;
 
@@ -23,7 +23,7 @@ function postMessage() {
   var botResponse, options, body, botReq;
 
   //botResponse = cool();
-  botResponse = lx;
+  botResponse = "PLEASE STAND BEHIND THE WHITE LINE WHILE THE BUS IS IN MOTION";
 
   options = {
     hostname: 'api.groupme.com',
