@@ -57,13 +57,13 @@ function postMessage() {
 }
 
 //Regex 2
-function respond2() {
+function respond() {
       var request = JSON.parse(this.req.chunks[0]),
         botRegex = /goodnight/i;  
 
   if(request.text && botRegex.test(request.text)) {  
     this.res.writeHead(200);
-    postMessage2();
+    postMessage();
     this.res.end();
   } else {
     console.log("don't care");
@@ -72,7 +72,7 @@ function respond2() {
   }
 }
 
-function postMessage2() {
+function postMessage() {
   var botResponse, options, body, botReq;
       botResponse = "THIS BUS IS NOW OUT OF SERVICE";   
 
@@ -107,13 +107,13 @@ function postMessage2() {
 }
 
 //Regex 3
-function respond3() {
+function respond() {
       var request = JSON.parse(this.req.chunks[0]),
         botRegex = /stop/i;  
 
   if(request.text && botRegex.test(request.text)) {  
     this.res.writeHead(200);
-    postMessage3();
+    postMessage();
     this.res.end();
   } else {
     console.log("don't care");
@@ -157,13 +157,13 @@ function postMessage() {
 }
 
 //Regex 4
-function respond4() {
+function respond() {
       var request = JSON.parse(this.req.chunks[0]),
         botRegex = /misbehav/i;  
 
   if(request.text && botRegex.test(request.text)) {  
     this.res.writeHead(200);
-    postMessage4();
+    postMessage();
     this.res.end();
   } else {
     console.log("don't care");
@@ -172,7 +172,7 @@ function respond4() {
   }
 }
 
-function postMessage4() {
+function postMessage() {
   var botResponse, options, body, botReq;
       botResponse = "YOU SUCK! YOU DON'T CONTROL ME!";   
 
