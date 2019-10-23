@@ -1,6 +1,5 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-var request = "";
 var lx = "PLEASE STAND BEHIND THE WHITE LINE WHILE THE BUS IS IN MOTION";
 var gn = "THIS BUS IS NOW OUT OF SERVICE";
 var stop = "STOP REQUESTED";
@@ -9,12 +8,13 @@ var pleaseStop = "YOU SUCK! YOU DON'T CONTROL ME!";
 var botID = process.env.BOT_ID;
 
 function respond() {
-      request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/lx$/;
+      var request = JSON.parse(this.req.chunks[0]),
+      botRegex = /^lx$/ || botRegex = /^goodnight$/ || botRegex = /^stoplx$/ || botRegex = /^pleasestop$/;
 
   if(request.text && botRegex.test(request.text)) {
+    var input = request.text;   
     this.res.writeHead(200);
-    postMessage();
+    postMessage(input);
     this.res.end();
   } else {
     console.log("don't care");
@@ -23,11 +23,18 @@ function respond() {
   }
 }
 
-function postMessage() {
+function postMessage(input) {
   var botResponse, options, body, botReq;
 
-  //botResponse = cool();
-  botResponse = lx;
+  if (input="lx"){
+      botResponse = lx;
+  }else if (input="goodnight"){
+      botResponse = gn;
+  }else if (input="stoplx"){
+      botResponse = stop;
+  }else if (input="pleasestop"){
+      botResponse = pleaseStop;
+  }    
 
   options = {
     hostname: 'api.groupme.com',
