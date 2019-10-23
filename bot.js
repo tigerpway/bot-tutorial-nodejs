@@ -9,12 +9,11 @@ var botID = process.env.BOT_ID;
 
 function respond() {
       var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\lx$/ || botRegex = /^\goodnight$/ || botRegex = /^\stoplx$/ || botRegex = /^\pleasestop$/;
+      botRegex = /^\lx$/;
 
-  if(request.text && botRegex.test(request.text)) {
-    var input = request.text;   
+  if(request.text && botRegex.test(request.text)) {  
     this.res.writeHead(200);
-    postMessage(input);
+    postMessage();
     this.res.end();
   } else {
     console.log("don't care");
@@ -23,18 +22,9 @@ function respond() {
   }
 }
 
-function postMessage(input) {
+function postMessage() {
   var botResponse, options, body, botReq;
-
-  if (input="lx"){
-      botResponse = lx;
-  }else if (input="goodnight"){
-      botResponse = gn;
-  }else if (input="stoplx"){
-      botResponse = stop;
-  }else if (input="pleasestop"){
-      botResponse = pleaseStop;
-  }    
+      botResponse = lx;   
 
   options = {
     hostname: 'api.groupme.com',
