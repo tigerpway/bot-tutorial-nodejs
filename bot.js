@@ -1,5 +1,6 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
+var request = "";
 var lx = "PLEASE STAND BEHIND THE WHITE LINE WHILE THE BUS IS IN MOTION";
 var gn = "THIS BUS IS NOW OUT OF SERVICE";
 var stop = "STOP REQUESTED";
@@ -8,7 +9,7 @@ var pleaseStop = "YOU SUCK! YOU DON'T CONTROL ME!";
 var botID = process.env.BOT_ID;
 
 function respond() {
-  var request = JSON.parse(this.req.chunks[0]),
+      request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/lx$/;
 
   if(request.text && botRegex.test(request.text)) {
