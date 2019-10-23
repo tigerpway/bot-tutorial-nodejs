@@ -9,7 +9,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
       var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^lx$/ || botRegex = /^goodnight$/ || botRegex = /^stoplx$/ || botRegex = /^pleasestop$/;
+      botRegex = /^\lx$/ || botRegex = /^\goodnight$/ || botRegex = /^\stoplx$/ || botRegex = /^\pleasestop$/;
 
   if(request.text && botRegex.test(request.text)) {
     var input = request.text;   
