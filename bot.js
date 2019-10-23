@@ -24,7 +24,7 @@ function respond() {
 
 function postMessage() {
   var botResponse, options, body, botReq;
-      botResponse = lx;   
+      botResponse = "PLEASE STAND BEHIND THE WHITE LINE WHILE THE BUS IS IN MOTION";   
 
   options = {
     hostname: 'api.groupme.com',
