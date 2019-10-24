@@ -18,7 +18,7 @@ function respond() {
       this.res.end();
     }else if (/stop/i.test(request.text)){
       this.res.writeHead(200);
-      postMessage("STOP REQUESTED");
+      postMessage("S​TOP REQUESTED");
       this.res.end();
     }else if (/pleasestop/i.test(request.text)){
       this.res.writeHead(200);
