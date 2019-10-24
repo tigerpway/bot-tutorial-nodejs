@@ -16,13 +16,13 @@ function respond() {
       this.res.writeHead(200);
       postMessage("THIS BUS IS NOW OUT OF SERVICE");
       this.res.end();
-    }else if (/stop/i.test(request.text)){
-      this.res.writeHead(200);
-      postMessage("S​TOP REQUESTED");
-      this.res.end();
     }else if (/pleasestop/i.test(request.text)){
       this.res.writeHead(200);
       postMessage("YOU SUCK! YOU DON'T CONTROL ME!");
+      this.res.end();
+    }else if (/stop/i.test(request.text)){
+      this.res.writeHead(200);
+      postMessage("S​TOP REQUESTED");
       this.res.end();
     }
   } else {
