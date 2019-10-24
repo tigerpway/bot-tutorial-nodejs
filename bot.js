@@ -8,21 +8,21 @@ function respond() {
       var request = JSON.parse(this.req.chunks[0]);  
 
   if(request.text) {
-    if (/lx/i.test(request.text)){
+    if (/injur/i.test(request.text)){
     this.res.writeHead(200);
-    postMessage("PLEASE STAND BEHIND THE WHITE LINE WHILE THE BUS IS IN MOTION");
+    postMessage("Run harder.");
     this.res.end();
-    }else if (/goodnight/i.test(request.text)){
+    }else if (/can i.+?/i.test(request.text)){
       this.res.writeHead(200);
-      postMessage("THIS BUS IS NOW OUT OF SERVICE");
+      postMessage("I don't know. Can you run a sub 30 8k?");
       this.res.end();
-    }else if (/pleasestop/i.test(request.text)){
+    }else if (/i have class/i.test(request.text)){
       this.res.writeHead(200);
-      postMessage("YOU SUCK! YOU DON'T CONTROL ME!");
+      postMessage("When I was at Rutgers, I pulled a 4.0 while running for the team. I scheduled my classes around practice. If I can do that while majoring in English, why can't you with your double major in engineering and medicine, 3 part time jobs, and infant twins?");
       this.res.end();
-    }else if (/stop/i.test(request.text)){
+    }else if (/hi chuck!/i.test(request.text)){
       this.res.writeHead(200);
-      postMessage("S​TOP REQUESTED");
+      postMessage("You still run?");
       this.res.end();
     }
   } else {
