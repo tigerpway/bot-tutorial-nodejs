@@ -10,19 +10,19 @@ function respond() {
   if(request.text) {
     if (/lx/i.test(request.text)){
     this.res.writeHead(200);
-    postMessage("a");
+    postMessage("PLEASE STAND BEHIND THE WHITE LINE WHILE THE BUS IS IN MOTION");
     this.res.end();
     }else if (/goodnight/i.test(request.text)){
       this.res.writeHead(200);
-      postMessage("b");
+      postMessage("THIS BUS IS NOW OUT OF SERVICE");
       this.res.end();
     }else if (/stop/i.test(request.text)){
       this.res.writeHead(200);
-      postMessage("c");
+      postMessage("STOP REQUESTED");
       this.res.end();
     }else if (/pleasestop/i.test(request.text)){
       this.res.writeHead(200);
-      postMessage("d");
+      postMessage("YOU SUCK! YOU DON'T CONTROL ME!");
       this.res.end();
     }
   } else {
@@ -32,17 +32,8 @@ function respond() {
   }
 }
 
-function postMessage(str) {
-  var botResponse, options, body, botReq;
-      if (str="a"){
-      botResponse = "PLEASE STAND BEHIND THE WHITE LINE WHILE THE BUS IS IN MOTION";   
-      }else if (str="b"){
-       botResponse = "THIS BUS IS NOW OUT OF SERVICE";   
-       }else if (str="c"){
-       botResponse = "STOP REQUESTED";   
-       }else if (str="d"){
-       botResponse = "YOU SUCK! YOU DON'T CONTROL ME!";   
-       }
+function postMessage(botResponse) {
+  var options, body, botReq;
           
   options = {
     hostname: 'api.groupme.com',
