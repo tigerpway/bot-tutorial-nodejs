@@ -8,22 +8,10 @@ function respond() {
       var request = JSON.parse(this.req.chunks[0]);  
 
   if(request.text) {
-    if (/lx/i.test(request.text)){
+    if (/van/i.test(request.text)){
     this.res.writeHead(200);
-    postMessage("PLEASE STAND BEHIND THE WHITE LINE WHILE THE BUS IS IN MOTION");
+    postMessage("Please upload a copy of your defensive driving form- Guillermo");
     this.res.end();
-    }else if (/goodnight/i.test(request.text)){
-      this.res.writeHead(200);
-      postMessage("THIS BUS IS NOW OUT OF SERVICE");
-      this.res.end();
-    }else if (/pleasestop/i.test(request.text)){
-      this.res.writeHead(200);
-      postMessage("YOU SUCK! YOU DON'T CONTROL ME!");
-      this.res.end();
-    }else if (/stop/i.test(request.text)){
-      this.res.writeHead(200);
-      postMessage("S​TOP REQUESTED");
-      this.res.end();
     }
   } else {
     console.log("don't care");
