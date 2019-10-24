@@ -12,6 +12,10 @@ function respond() {
     this.res.writeHead(200);
     postMessage("Run harder.");
     this.res.end();
+    }else if (/hurt/i.test(request.text)){
+      this.res.writeHead(200);
+      postMessage("Run more.");
+      this.res.end();
     }else if (/can i.+?/i.test(request.text)){
       this.res.writeHead(200);
       postMessage("I don't know. Can you run a sub 30 8k?");
