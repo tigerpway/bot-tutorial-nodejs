@@ -1,20 +1,30 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-var gn = "THIS BUS IS NOW OUT OF SERVICE";
-var stop = "STOP REQUESTED";
-var pleaseStop = "YOU SUCK! YOU DON'T CONTROL ME!";
 
 var botID = process.env.BOT_ID;
 
 //Regex 1
 function respond() {
-      var request = JSON.parse(this.req.chunks[0]),
-        botRegex = /lx/i;  
+      var request = JSON.parse(this.req.chunks[0]);  
 
-  if(request.text && botRegex.test(request.text)) {  
+  if(request.text) {
+    if (/lx/i.test(request.text)){
     this.res.writeHead(200);
-    postMessage();
+    postMessage("a");
     this.res.end();
+    }else if (/goodnight/i.test(request.text)){
+      this.res.writeHead(200);
+      postMessage("b");
+      this.res.end();
+    }else if (/stop/i.test(request.text)){
+      this.res.writeHead(200);
+      postMessage("c");
+      this.res.end();
+    }else if (/pleasestop/i.test(request.text)){
+      this.res.writeHead(200);
+      postMessage("d");
+      this.res.end();
+    }
   } else {
     console.log("don't care");
     this.res.writeHead(200);
@@ -22,10 +32,18 @@ function respond() {
   }
 }
 
-function postMessage() {
+function postMessage(str) {
   var botResponse, options, body, botReq;
+      if (str="a"){
       botResponse = "PLEASE STAND BEHIND THE WHITE LINE WHILE THE BUS IS IN MOTION";   
-
+      }else if (str="b"){
+       botResponse = "THIS BUS IS NOW OUT OF SERVICE";   
+       }else if (str="c"){
+       botResponse = "STOP REQUESTED";   
+       }else if (str="d"){
+       botResponse = "YOU SUCK! YOU DON'T CONTROL ME!";   
+       }
+          
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
