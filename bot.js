@@ -12,11 +12,11 @@ function respond() {
     this.res.writeHead(200);
     postMessage("PLEASE STAND BEHIND THE WHITE LINE WHILE THE BUS IS IN MOTION");
     this.res.end();
-    }else if (/goodnight/i.test(request.text)){
+    }else if (/good night/i.test(request.text)){
       this.res.writeHead(200);
       postMessage("THIS BUS IS NOW OUT OF SERVICE");
       this.res.end();
-    }else if (/pleasestop/i.test(request.text)){
+    }else if (/bus.+slow|late/i.test(request.text)){
       this.res.writeHead(200);
       postMessage("YOU SUCK! YOU DON'T CONTROL ME!");
       this.res.end();
