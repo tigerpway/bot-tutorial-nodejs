@@ -8,9 +8,9 @@ function respond() {
       var request = JSON.parse(this.req.chunks[0]);  
 
   if(request.text) {
-    if (/lx/i.test(request.text)){
+    if (/why.+lx?|bus?/i.test(request.text)){
     this.res.writeHead(200);
-    postMessage("PLEASE STAND BEHIND THE WHITE LINE WHILE THE BUS IS IN MOTION");
+    postMessage("STOP ASKING QUESTIONS OR I'LL DROP YOU OFF ON BUSCH. OR HIT YOU. DO I LOOK LIKE A WEEKEND 1 TO YOU?");
     this.res.end();
     }else if (/good night/i.test(request.text)){
       this.res.writeHead(200);
@@ -24,7 +24,12 @@ function respond() {
       this.res.writeHead(200);
       postMessage("S​TOP REQUESTED");
       this.res.end();
+    }else if (/lx/i.test(request.text)){
+    this.res.writeHead(200);
+    postMessage("PLEASE STAND BEHIND THE WHITE LINE WHILE THE BUS IS IN MOTION");
+    this.res.end();
     }
+        
   } else {
     console.log("don't care");
     this.res.writeHead(200);
