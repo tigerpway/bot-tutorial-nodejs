@@ -8,7 +8,7 @@ function respond() {
       var request = JSON.parse(this.req.chunks[0]);  
 
   if(request.text) {
-    if (/why.+lx?|bus?/i.test(request.text)){
+    if (/peepepoopoo/i.test(request.text)){
     this.res.writeHead(200);
     postMessage("STOP ASKING QUESTIONS OR I'LL DROP YOU OFF ON BUSCH. OR HIT YOU. DO I LOOK LIKE A WEEKEND 1 TO YOU?");
     this.res.end();
