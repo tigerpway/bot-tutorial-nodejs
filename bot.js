@@ -32,7 +32,7 @@ function respond() {
       this.res.writeHead(200);
       postMessage("Hi, I'm Chuckbot, your unfriendly and overdemanding virtual coach. Like my creator, I'm not too bright. And like my real-life counterpart, I tend to say the wrong things at the most inopportune times.");
       this.res.end();
-    }else if (/when.+practice/i.test(request.text) || /time.+practice/i.test(request.text) || /where.+practice/i.test(request.text)){
+    }else if (/when.+practice/i.test(request.text) || /practice.+when/i.test(request.text) || /time.+practice/i.test(request.text) || /practice.+time/i.test(request.text) || /where.+practice/i.test(request.text) || /practice.+where/i.test(request.text) || /location.+practice/i.test(request.text) || /practice.+location/i.test(request.text)){
       this.res.writeHead(200);
       postMessage("Practice @college ave student center 5:30pm Monday-Thursday, 4:15 Friday");
       this.res.end();
