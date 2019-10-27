@@ -32,11 +32,11 @@ function respond() {
       this.res.writeHead(200);
       postMessage("Hi, I'm Chuckbot, your unfriendly and overdemanding virtual coach. Like my creator, I'm not too bright. And like my real-life counterpart, I tend to say the wrong things at the most inopportune times.");
       this.res.end();
-    }else if (/when.+practice/i.test(request.text)){
+    }else if (/when.+practice/i.test(request.text) || /time.+practice/i.test(request.text)){
       this.res.writeHead(200);
       postMessage("Practice @college ave student center 5:30pm Monday-Thursday, 4:15 Friday");
       this.res.end();
-    }else if (/@chuckbot, what's the workout today?/i.test(request.text)){
+    }else if (/what.+workout/i.test(request.text)){
       this.res.writeHead(200);
       postMessage("I'm not not smart enough to tell you the exact workout, but here's the training plan: https://docs.google.com/spreadsheets/d/1uXZJmq_Pl_2TBoQyUTUVXFDHmbyftZglgFt0Var3ONI/edit?usp=sharing");
       this.res.end();
