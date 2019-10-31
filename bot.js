@@ -38,7 +38,11 @@ function respond() {
       this.res.end();
     }else if (/what.+workout/i.test(request.text)){
       this.res.writeHead(200);
-      postMessage("I'm not not smart enough to tell you the exact workout, but here's the training plan: https://docs.google.com/spreadsheets/d/1uXZJmq_Pl_2TBoQyUTUVXFDHmbyftZglgFt0Var3ONI/edit?usp=sharing");
+      postMessage("I can't tell you the exact workout, but here's the training plan: https://docs.google.com/spreadsheets/d/1uXZJmq_Pl_2TBoQyUTUVXFDHmbyftZglgFt0Var3ONI/edit?usp=sharing");
+      this.res.end();
+    }else if (/meme/i.test(request.text)){
+      this.res.writeHead(200);
+      postMessage("https://i.groupme.com/743x592.jpeg.232923bfa9ee41cb8389b835bae2e838");
       this.res.end();
     }
   } else {
