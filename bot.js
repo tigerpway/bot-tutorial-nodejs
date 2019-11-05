@@ -16,13 +16,13 @@ function respond() {
       this.res.writeHead(200);
       postMessage("Run more.");
       this.res.end();
-    }else if (/can i.+?/i.test(request.text)){
+    }else if (/can i.+\?/i.test(request.text)){
       this.res.writeHead(200);
       postMessage("I don't know. Can you run a sub 30 8k?");
       this.res.end();
     }else if (/i have class/i.test(request.text)){
       this.res.writeHead(200);
-      postMessage("When I was at Rutgers, I pulled a 4.0 while running for the team. I scheduled my classes around practice. If I can do that while majoring in English, why can't you with your double major in engineering and medicine, 3 part time jobs, and infant twins?");
+      postMessage("When I was at Rutgers, I pulled a 4.0 while running for the team. I scheduled my classes around practice. If I can do that while majoring in English, why can't you with your double major in engineering and medicine, 3 part time jobs, and infant quadruplets?");
       this.res.end();
     }else if (/hi chuck!/i.test(request.text)){
       this.res.writeHead(200);
@@ -30,15 +30,19 @@ function respond() {
       this.res.end();
     }else if (/hi @chuckbot!/i.test(request.text)){
       this.res.writeHead(200);
-      postMessage("Hi, I'm Chuckbot, your unfriendly and overdemanding virtual coach. Like my creator, I'm not too bright. And like my real-life counterpart, I tend to say the wrong things at the most inopportune times.");
+      postMessage("Hi, I'm Chuckbot, the inferior digital version of the club coach. I can answer basic questions about when and where we meet to run. I'm always being improved!");
       this.res.end();
-    }else if (/(when.*practice)|(practice.*when)/i.test(request.text) || /(time.*practice)|(practice.*time)/i.test(request.text) || /(where.*practice)|(practice.*where)/i.test(request.text) || /(location.*practice)|(practice.*location)/i.test(request.text)){
+    }else if (/(is.*practic.*today)|(is.*running.*today)|(are.*running.*today)/i.test(request.text) || /(when.*practice)|(practice.*when)/i.test(request.text) || /(time.*practice)|(practice.*time)/i.test(request.text) || /(where.*practice)|(practice.*where)/i.test(request.text) || /(location.*practice)|(practice.*location)/i.test(request.text)){
       this.res.writeHead(200);
-      postMessage("Practice @college ave student center 5:30pm Monday-Thursday, 4:15 Friday");
+      postMessage("Practice @ College Ave Student Center, 5:30pm Monday-Thursday and 4:15pm Friday");
       this.res.end();
     }else if (/what.+workout/i.test(request.text)){
       this.res.writeHead(200);
       postMessage("I can't tell you the exact workout, but here's the training plan: https://docs.google.com/spreadsheets/d/1uXZJmq_Pl_2TBoQyUTUVXFDHmbyftZglgFt0Var3ONI/edit?usp=sharing");
+      this.res.end();
+    }else if (/(morning.*run)|(run.*morning)/i.test(request.text)){
+      this.res.writeHead(200);
+      postMessage("Can't make it to normal practice? Join the morning practice GroupMe here: https://web.groupme.com/join_group/48161094/2iDQt4Xi");
       this.res.end();
     }else if (/meme/i.test(request.text)){
       this.res.writeHead(200);
