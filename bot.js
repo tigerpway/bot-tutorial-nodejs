@@ -42,7 +42,17 @@ function respond() {
       this.res.end();
     }else if (/meme/i.test(request.text)){
       this.res.writeHead(200);
-      postMessage("https://i.groupme.com/743x592.jpeg.232923bfa9ee41cb8389b835bae2e838");
+      switch (Math.floor((Math.random() * 3) + 1)){
+        case 1:
+            postMessage("https://i.groupme.com/743x592.jpeg.232923bfa9ee41cb8389b835bae2e838");
+            break;
+        case 2:
+            postMessage("https://i.groupme.com/959x1298.jpeg.1a7a67ee72d341aebdfdff10d533200b");
+            break;
+        case 3:
+            postMessage("https://i.groupme.com/1080x1920.png.a7de6e084ac84c6a8c2d7b1c0bcb6400");
+            break;           
+      }
       this.res.end();
     }
   } else {
