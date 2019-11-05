@@ -12,6 +12,11 @@ function respond() {
     this.res.writeHead(200);
     postMessage("Please upload a copy of your defensive driving form- Guillermo");
     this.res.end();
+    }else if (/rec/i.test(request.text)){
+    this.res.writeHead(200);
+    postMessage("Attention! Your Driver License will expire in 30 days, which will affect your Club membership’s status. Please re-submit a new valid document.
+");
+    this.res.end();
     }
   } else {
     console.log("don't care");
