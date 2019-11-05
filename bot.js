@@ -32,7 +32,7 @@ function respond() {
       this.res.writeHead(200);
       postMessage("Hi, I'm Chuckbot, the inferior digital version of the club coach. I can answer basic questions about when and where we meet to run. I'm always being improved!");
       this.res.end();
-    }else if (/(is.*practic.*today)|(is.*running.*today)|(are.*running.*today)/i.test(request.text) || /(when.*practice)|(practice.*when)/i.test(request.text) || /(time.*practice)|(practice.*time)/i.test(request.text) || /(where.*practice)|(practice.*where)/i.test(request.text) || /(location.*practice)|(practice.*location)/i.test(request.text)){
+    }else if (/(is.*practic.*today)|(is.*running.*today)|(are.*running.*today)|(is.*practic.*afternoon)|(is.*running.*afternoon)|(are.*running.*afternoon)/i.test(request.text) || /(when.*practice)|(practice.*when)/i.test(request.text) || /(time.*practice)|(practice.*time)/i.test(request.text) || /(where.*practice)|(practice.*where)/i.test(request.text) || /(location.*practice)|(practice.*location)/i.test(request.text)){
       this.res.writeHead(200);
       postMessage("Practice @ College Ave Student Center, 5:30pm Monday-Thursday and 4:15pm Friday");
       this.res.end();
