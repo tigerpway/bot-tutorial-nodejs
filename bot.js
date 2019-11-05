@@ -46,7 +46,7 @@ function respond() {
       this.res.end();
     }else if (/meme/i.test(request.text)){
       this.res.writeHead(200);
-      switch (Math.floor((Math.random() * 3) + 1)){
+      switch (Math.floor((Math.random() * 7) + 1)){
         case 1:
             postMessage("https://i.groupme.com/743x592.jpeg.232923bfa9ee41cb8389b835bae2e838");
             break;
@@ -55,7 +55,19 @@ function respond() {
             break;
         case 3:
             postMessage("https://i.groupme.com/1080x1920.png.a7de6e084ac84c6a8c2d7b1c0bcb6400");
-            break;           
+            break;
+        case 4:
+            postMessage("https://i.groupme.com/627x696.jpeg.f29e2196594c4279bcb512923a9174cd");
+            break;
+        case 5:
+            postMessage("https://i.groupme.com/960x960.jpeg.cc7bd07897e54186b8b4f26c294c63d5");
+            break;
+        case 6:
+            postMessage("https://i.groupme.com/720x960.jpeg.8f9a90f15e4d408a91d24d7639c979c0");
+            break;
+       case 7:
+            postMessage("https://i.groupme.com/2048x1360.jpeg.3323591754b7429390e270ebbc17fb64");
+            break;                  
       }
       this.res.end();
     }
