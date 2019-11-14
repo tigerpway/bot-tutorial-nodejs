@@ -10,7 +10,7 @@ function respond() {
   if(request.text) {
     if (/injur/i.test(request.text)){
     this.res.writeHead(200);
-    postMessage("Run hard\0er.");
+    postMessage("Run harder.");
     this.res.end();
     }else if (/hurt/i.test(request.text)){
       this.res.writeHead(200);
@@ -34,15 +34,15 @@ function respond() {
       this.res.end();
     }else if (/(is.*practic.*today)|(is.*running.*today)|(are.*running.*today)|(is.*practic.*afternoon)|(is.*running.*afternoon)|(are.*running.*afternoon)/i.test(request.text) || /(when.*practice)|(practice.*when)/i.test(request.text) || /(time.*practice)|(practice.*time)/i.test(request.text) || /(where.*practice)|(practice.*where)/i.test(request.text) || /(location.*practice)|(practice.*location)/i.test(request.text)){
       this.res.writeHead(200);
-      postMessage("Practice @ College Ave Student Center, 5:30pm Monday-Thursday and 4:15pm Friday");
+      postMessage("Practice @ College Ave Student Center \n Monday-Thursday: 5:30pm \n Friday: 4:15pm");
       this.res.end();
     }else if (/what.+workout/i.test(request.text)){
       this.res.writeHead(200);
       postMessage("I can't tell you the exact workout, but here's the training plan: https://docs.google.com/spreadsheets/d/1uXZJmq_Pl_2TBoQyUTUVXFDHmbyftZglgFt0Var3ONI/edit?usp=sharing");
       this.res.end();
-    }else if (/(morning.*run)|(run.*morning)/i.test(request.text)){
+    }else if (/(morning.*run)|(run.*morning)|(morning.*practice)|(practice.*morning)/i.test(request.text)){
       this.res.writeHead(200);
-      postMessage("Can't make it to normal practice? Join the morning practice GroupMe here: https://web.groupme.com/join_group/48161094/2iDQt4Xi");
+      postMessage("Can't make it to normal prac\0tice? Join the morning ru\0n GroupMe here: https://web.groupme.com/join_group/48161094/2iDQt4Xi");
       this.res.end();
     }else if (/meme/i.test(request.text)){
       this.res.writeHead(200);
