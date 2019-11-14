@@ -3,9 +3,16 @@ var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 
+var numberOnlyUsedOnce = 0;
+
 //Regex 1
 function respond() {
       var request = JSON.parse(this.req.chunks[0]);
+      
+      if (numberOnlyUsedOnce == 0) { // Don't spam because this is dumb
+            console.log(request.toString()); // See request
+            numberOnlyUsedOnce = 1;
+      }
       
   if(request.text) {
     if (/injur/i.test(request.text)){
