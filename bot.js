@@ -37,9 +37,6 @@ function respond() {
       postMessage("Hi, I'm Chuckbot, the inferior digital version of the club coach. I can answer basic questions about when and where we meet to run. I'm always being improved!");
       this.res.end();
     }else if (/(is.*practic.*today)|(is.*running.*today)|(are.*running.*today)|(is.*practic.*afternoon)|(is.*running.*afternoon)|(are.*running.*afternoon)/i.test(request.text) || /(when.*practice)|(practice.*when)/i.test(request.text) || /(time.*practice)|(practice.*time)/i.test(request.text) || /(where.*practice)|(practice.*where)/i.test(request.text) || /(location.*practice)|(practice.*location)/i.test(request.text)){
-      if (request.text=="When I was at Rutgers, I pulled a 4.0 while running for the team. I scheduled my classes around practice. If I can do that while majoring in English, why can't you with your double major in engineering and medicine, 3 part time jobs, and infant quadruplets?"){
-             break;
-      }
       this.res.writeHead(200);
       postMessage("Practice @ College Ave Student Center \n Monday-Thursday: 5:30pm \n Friday: 4:15pm");
       this.res.end();
