@@ -28,6 +28,10 @@ function respond() {
       this.res.writeHead(200);
       postMessage("You still run?");
       this.res.end();
+    }else if (/chuck, what is your 800 time/i.test(request.text)){
+      this.res.writeHead(200);
+      postMessage("Faster than yours.");
+      this.res.end();
     }else if (/hi @chuckbot!/i.test(request.text)){
       this.res.writeHead(200);
       postMessage("Hi, I'm Chuckbot, the inferior digital version of the club coach. I can answer basic questions about when and where we meet to run. I'm always being improved!");
@@ -36,9 +40,17 @@ function respond() {
       this.res.writeHead(200);
       postMessage("Practice @ College Ave Student Center \n Monday-Thursday: 5:30pm \n Friday: 4:15pm");
       this.res.end();
-    }else if (/what.+workout/i.test(request.text)){
+    }else if (/what.*workout/i.test(request.text)){
       this.res.writeHead(200);
       postMessage("I can't tell you the exact workout, but here's the training plan: https://docs.google.com/spreadsheets/d/1uXZJmq_Pl_2TBoQyUTUVXFDHmbyftZglgFt0Var3ONI/edit?usp=sharing");
+      this.res.end();
+    }else if (/i'm.*late/i.test(request.text)){
+      this.res.writeHead(200);
+      postMessage("Hurry up!");
+      this.res.end();
+    }else if (/http.*form/i.test(request.text)){
+      this.res.writeHead(200);
+      postMessage("Have the decency to show up to practice before sending Google Forms.");
       this.res.end();
     }else if (/(morning.*run)|(run.*morning)|(morning.*practice)|(practice.*morning)/i.test(request.text)){
       this.res.writeHead(200);
