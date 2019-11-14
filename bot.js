@@ -14,8 +14,11 @@ function respond() {
     this.res.end();
     }else if (/rec/i.test(request.text)){
     this.res.writeHead(200);
-    postMessage("Attention! Your Driver License will expire in 30 days, which will affect your Club membership’s status. Please re-submit a new valid document.
-");
+    postMessage("Attention! Your Driver License will expire in 30 days, which will affect your Club membership’s status. Please re-submit a new valid document.");
+    this.res.end();
+    }else if (/cold/i.test(request.text)){
+    this.res.writeHead(200);
+    postMessage("Good afternoon, \n Due to the unexpected drop in temperature this evening we are cancelling all outdoor practices this evening. \n Best \n Mr. Pappas");
     this.res.end();
     }
   } else {
