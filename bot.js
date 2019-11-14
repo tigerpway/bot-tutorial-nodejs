@@ -10,7 +10,7 @@ function respond() {
   if(request.text) {
     if (/injur/i.test(request.text)){
     this.res.writeHead(200);
-    postMessage("Run harder.");
+    postMessage("Run hard\0er.");
     this.res.end();
     }else if (/hurt/i.test(request.text)){
       this.res.writeHead(200);
