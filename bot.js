@@ -2,11 +2,16 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
+var botSenderID = process.env.SENDER_ID;
 
 function respond() {
       var request = JSON.parse(this.req.chunks[0]);
       
-      console.log(JSON.stringify(request)); // See request
+      //console.log(JSON.stringify(request)); // See request
+      
+      if (request.sender_id == botSenderID) {
+            return; // ignore the bot's own messages
+      }
       
   if(request.text) {
     if (/injur/i.test(request.text)){
