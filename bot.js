@@ -22,7 +22,7 @@ function respond() {
       this.res.end();
     }else if (/i have class/i.test(request.text)){
       this.res.writeHead(200);
-      postMessage("When I was at Rutgers, I pulled a 4.0 while running for the team. I scheduled my classes around practice. If I can do that while majoring in English, why can't you with your double major in engineering and medicine, 3 part time jobs, and infant quadruplets?");
+      postMessage("Wh\0en I was at Rutgers, I pulled a 4.0 while running for the team. I scheduled my classes around practice. If I can do that while majoring in English, why can't you with your double major in engineering and medicine, 3 part time jobs, and infant quadruplets?");
       this.res.end();
     }else if (/hi chuck!/i.test(request.text)){
       this.res.writeHead(200);
