@@ -10,7 +10,7 @@ function respond() {
       var request = JSON.parse(this.req.chunks[0]);
       
       if (numberOnlyUsedOnce == 0) { // Don't spam because this is dumb
-            console.log(request.toString()); // See request
+            console.log(JSON.stringify(request)); // See request
             numberOnlyUsedOnce = 1;
       }
       
