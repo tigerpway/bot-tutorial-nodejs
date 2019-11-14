@@ -18,7 +18,7 @@ function respond() {
     this.res.end();
     }else if (/cold/i.test(request.text)){
     this.res.writeHead(200);
-    postMessage("Good afternoon, \n \n Due to the unexpected drop in temperature this evening we are cancelling all outdoor practices this evening. \n \n Best \n \n Mr. Pappas");
+    postMessage("GoOd AfTeRnOoN, \n \n DuE tO ThE uEeXpEcTeD dRoP iN tEmPeRaTuRe tHiS eVeNiNg We ArE cAnCeLlInG aLl OuTdOoR pRaCtIcEs tHiS EvEnInG. \n \n BeSt \n \n Mr. PapPaS");
     this.res.end();
     }
   } else {
