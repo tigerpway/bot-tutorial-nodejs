@@ -30,6 +30,10 @@ function respond() {
       this.res.writeHead(200);
       postMessage("Because a democracy is not a democracy if only one person is running. It's that simple. Also, I'm always available and I'm the only one with enough patience to deal with Pappas. Watch. Cold.");
       this.res.end();
+    }else if (/good afternoon/i.test(request.text)){
+      this.res.writeHead(200);
+      postMessage("Are you going to do plyometrics or sit here with your thumb up your ass and send useless emails?");
+      this.res.end();
     }else if (/what will you do/i.test(request.text)){
       this.res.writeHead(200);
       postMessage("I will make you run your ass off. And insult you while doing it. Then insult you some more.");
