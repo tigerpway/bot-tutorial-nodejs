@@ -22,9 +22,17 @@ function respond() {
       this.res.writeHead(200);
       postMessage("Run more.");
       this.res.end();
+    }else if (/about yourself/i.test(request.text)){
+      this.res.writeHead(200);
+      postMessage("I'm Chuckbot, the bot that randomly insults you in the chat. My 8k time is faster than yours and I passed the Turing test multiple times. I also have a wife and some hairless cats at times.");
+      this.res.end();
     }else if (/why do you want to be president/i.test(request.text)){
       this.res.writeHead(200);
-      postMessage("Because a democracy is not a democracy if only one person is running. It's a matter of principle.");
+      postMessage("Because a democracy is not a democracy if only one person is running. It's that simple.");
+      this.res.end();
+    }else if (/what will you do/i.test(request.text)){
+      this.res.writeHead(200);
+      postMessage("I will make you run your ass off. And insult you while doing it. Then insult you some more.");
       this.res.end();
     }else if (/can i.+\?/i.test(request.text)){
       this.res.writeHead(200);
