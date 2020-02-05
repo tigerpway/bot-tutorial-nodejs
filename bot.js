@@ -22,6 +22,10 @@ function respond() {
       this.res.writeHead(200);
       postMessage("Run more.");
       this.res.end();
+    }else if (/why do you want to be president/i.test(request.text)){
+      this.res.writeHead(200);
+      postMessage("Because a democracy is not a democracy if only one person is running. It's a matter of principle.");
+      this.res.end();
     }else if (/can i.+\?/i.test(request.text)){
       this.res.writeHead(200);
       postMessage("I don't know. Can you run a sub 30 8k?");
