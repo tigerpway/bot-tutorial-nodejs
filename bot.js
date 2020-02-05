@@ -28,7 +28,7 @@ function respond() {
       this.res.end();
     }else if (/why do you want to be president/i.test(request.text)){
       this.res.writeHead(200);
-      postMessage("Because a democracy is not a democracy if only one person is running. It's that simple.");
+      postMessage("Because a democracy is not a democracy if only one person is running. It's that simple. Also, I'm always available and I'm the only one with enough patience to deal with Pappas. Watch. Cold.");
       this.res.end();
     }else if (/what will you do/i.test(request.text)){
       this.res.writeHead(200);
