@@ -7,7 +7,32 @@ var botID = process.env.BOT_ID;
 function respond() {
       var request = JSON.parse(this.req.chunks[0]);  
 
-  if(request.text) {
+      if (/o lx on busch, what is thou wisdom?/i.test(request.text)){
+      this.res.writeHead(200);
+      switch (Math.floor((Math.random() * 7) + 1)){
+        case 1:
+            postMessage("If you're already going to be late, take a 15 minute break.");
+            break;
+        case 2:
+            postMessage("If early is on time, on time is late, and late is unacceptable, therefore by the transitive property, early is unacceptable. So you might as well be late.");
+            break;
+        case 3:
+            postMessage("You miss 100% of the shots you don't take. - Lee Harvey Oswald");
+            break;
+        case 4:
+            postMessage("Don't give up on your dreams. Keep sleeping.");
+            break;
+        case 5:
+            postMessage("Sometimes violence is the answer.");
+            break;
+        case 6:
+            postMessage("If you're ever feeling bad for someone else, look in a mirror. They could have it a lot worse. They could be you.");
+            break;
+       case 7:
+            postMessage("Remember that everyone is unique. Which makes us exactly the same.");
+            break;                  
+      }this.res.end();
+    }else if(request.text) {
     if (/lx/i.test(request.text)){
     this.res.writeHead(200);
     postMessage("PLEASE STAND BEHIND THE WHITE LINE WHILE THE BUS IS IN MOTION");
