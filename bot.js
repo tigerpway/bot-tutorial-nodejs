@@ -7,7 +7,7 @@ var botID = process.env.BOT_ID;
 function respond() {
       var request = JSON.parse(this.req.chunks[0]);  
 
-      if (/o lx on busch, what is thou wisdom?/i.test(request.text)){
+      if (/o lx on busch, what is thy wisdom?/i.test(request.text)){
       this.res.writeHead(200);
       switch (Math.floor((Math.random() * 7) + 1)){
         case 1:
