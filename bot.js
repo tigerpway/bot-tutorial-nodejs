@@ -9,7 +9,7 @@ function respond() {
 
       if (/o lx on busch, what is thy wisdom?/i.test(request.text)){
       this.res.writeHead(200);
-      switch (Math.floor((Math.random() * 7) + 1)){
+      switch (Math.floor((Math.random() * 8) + 1)){
         case 1:
             postMessage("If you're already going to be late, take a 15 minute break.");
             break;
@@ -30,7 +30,10 @@ function respond() {
             break;
        case 7:
             postMessage("Remember that everyone is unique. Which makes us exactly the same.");
-            break;                  
+            break; 
+       case 8:
+            postMessage("If you're gonna drink and drive, wear a condom.");
+            break;                   
       }this.res.end();
     }else if(request.text) {
     if (/lx/i.test(request.text)){
