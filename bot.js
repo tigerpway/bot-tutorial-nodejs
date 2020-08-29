@@ -35,16 +35,44 @@ function respond() {
             postMessage("If you're gonna drink and drive, wear a condom.");
             break;                   
       }this.res.end();
+    }else if (/song of the day/i.test(request.text)){
+      this.res.writeHead(200);
+      switch (Math.floor((Math.random() * 1) + 1)){
+        case 1:
+            postMessage("Will you join in our crusade? \n Who will be strong and stand with me? \n Somewhere beyond the barricade \n Is there a world you long to see? \n Do you hear the people sing? \n Say, do you hear the distant drums? \n It is the future that they bring \n When tomorrow comes!");
+            break;
+        case 2:
+            postMessage("If early is on time, on time is late, and late is unacceptable, therefore by the transitive property, early is unacceptable. So you might as well be late.");
+            break;
+        case 3:
+            postMessage("You miss 100% of the shots you don't take. - Lee Harvey Oswald");
+            break;
+        case 4:
+            postMessage("Don't give up on your dreams. Keep sleeping.");
+            break;
+        case 5:
+            postMessage("Sometimes violence is the answer.");
+            break;
+        case 6:
+            postMessage("If you're ever feeling bad for someone else, look in a mirror. They could have it a lot worse. They could be you.");
+            break;
+       case 7:
+            postMessage("Remember that everyone is unique. Which makes us exactly the same.");
+            break; 
+       case 8:
+            postMessage("If you're gonna drink and drive, wear a condom.");
+            break;                   
+      }this.res.end();
     }else if(request.text) {
     if (/lx/i.test(request.text)){
     this.res.writeHead(200);
     postMessage("PLEASE STAND BEHIND THE WHITE LINE WHILE THE BUS IS IN MOTION");
     this.res.end();
-    }else if (/goodnight/i.test(request.text)){
+    }else if (/good night/i.test(request.text)){
       this.res.writeHead(200);
       postMessage("THIS BUS IS NOW OUT OF SERVICE");
       this.res.end();
-    }else if (/pleasestop/i.test(request.text)){
+    }else if (/please stop/i.test(request.text)){
       this.res.writeHead(200);
       postMessage("YOU SUCK! YOU DON'T CONTROL ME!");
       this.res.end();
